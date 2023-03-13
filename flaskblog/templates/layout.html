@@ -13,9 +13,9 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'main.css') }}">
 
   {% if title %}
-  <title>Flask_Practice - {{title}}</title>
+    <title>Flask_Practice - {{title}}</title>
   {% else %}
-  <title>Flask_Practice</title>
+    <title>Flask_Practice</title>
   {% endif %}
 </head>
 
@@ -53,15 +53,16 @@
     <div class="row">
       <div class="col-md-8">
         {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-        {% for category, message in messages %}
-        <div class="alert alert-{{ category }}">
-          {{ message }}
-        </div>
-        {% endfor %}
-        {% endif %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert alert-{{ category }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
         {% endwith %}
-        {% block content %}{% endblock %}
+        {% block content %}
+        {% endblock content %}
       </div>
       <div class="col-md-4">
         <div class="content-section">
